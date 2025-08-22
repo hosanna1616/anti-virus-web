@@ -1,23 +1,39 @@
-import { Navigation } from "@/components/navigation"
-import { BackgroundVideo } from "@/components/background-video"
-import { Footer } from "@/components/footer"
-import { EthiopianPattern } from "@/components/ethiopian-pattern"
-import { EthiopianFlag, EthiopianDivider, EthiopianQuote } from "@/components/ethiopian-cultural-elements"
-import { ScrollReveal } from "@/components/scroll-reveal"
-import { AnimatedCounter } from "@/components/animated-counter"
-import { Button } from "@/components/ui/button"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Shield, Zap, Globe, Users, ArrowRight, CheckCircle } from "lucide-react"
-import Link from "next/link"
+import { Navigation } from "@/components/navigation";
+
+import { Footer } from "@/components/footer";
+import { EthiopianPattern } from "@/components/ethiopian-pattern";
+import {
+  EthiopianFlag,
+  EthiopianDivider,
+  EthiopianQuote,
+} from "@/components/ethiopian-cultural-elements";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { AnimatedCounter } from "@/components/animated-counter";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Shield,
+  Zap,
+  Globe,
+  Users,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
+import Link from "next/link";
+import BackgroundVideo from "@/components/VideoBackground";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background page-transition">
-      <Navigation />
-
+    <div className="min-h-screen bg-transparent">
+      {/* <Navigation /> */}
+      {/* <BackgroundVideo /> */}
       <section className="relative overflow-hidden min-h-screen flex items-center">
-        <BackgroundVideo />
         <div className="container relative z-10 px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-32">
           <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8">
             <Badge
@@ -139,7 +155,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-     
+
       {/* Features Section */}
       <section className="py-12 sm:py-16 lg:py-20 bg-muted/30">
         <div className="container px-4 sm:px-6 lg:px-8">
@@ -325,7 +341,7 @@ export default function HomePage() {
         </section>
       </ScrollReveal> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

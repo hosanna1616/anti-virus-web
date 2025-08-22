@@ -13,8 +13,8 @@ import { EthiopianFlag } from "@/components/ethiopian-cultural-elements"
 
 export default function SupportPage() {
   return (
-    <div className="min-h-screen bg-background ">
-      <Navigation />
+    <div className="min-h-screen bg-transparent">
+     
 
       <div className="container px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto space-y-12">
@@ -28,7 +28,7 @@ export default function SupportPage() {
             
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-90">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-20">
             {/* Contact Methods */}
             <div className="space-y-6">
               <Card>
@@ -168,7 +168,6 @@ export default function SupportPage() {
         </div>
       </div>
 
-      <Footer />
     </div>
   )
 }

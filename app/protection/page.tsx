@@ -2,7 +2,7 @@
 
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { BackgroundVideo } from "@/components/background-video";
+
 import {
   Card,
   CardContent,
@@ -21,18 +21,19 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { EthiopianFlag } from "@/components/ethiopian-cultural-elements";
+import BackgroundVideo from "@/components/VideoBackground";
 
 export default function ProtectionPage() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Fullscreen Background Video */}
       <div className="fixed inset-0 -z-10">
-        <BackgroundVideo darkMode />
+        {/* <BackgroundVideo /> */}
       </div>
 
       {/* Main Content */}
       <div className="relative z-10">
-        <Navigation />
+        {/* <Navigation /> */}
 
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20">
@@ -120,7 +121,7 @@ export default function ProtectionPage() {
           </div>
         </section>
 
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

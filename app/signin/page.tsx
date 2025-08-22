@@ -18,10 +18,11 @@ import {
 import { Navigation } from "@/components/navigation";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Checkbox } from "@/components/ui/checkbox";
-import { BackgroundVideo } from "@/components/background-video";
+
 import { EthiopianFlag } from "@/components/ethiopian-cultural-elements";
 import { Shield, Eye, EyeOff, AlertCircle } from "lucide-react";
 import { Footer } from "@/components/footer";
+import BackgroundVideo from "@/components/VideoBackground";
 
 export default function SignInPage() {
   const [email, setEmail] = useState("");
@@ -54,14 +55,12 @@ export default function SignInPage() {
     <div className="relative min-h-screen w-full flex flex-col overflow-hidden">
       {/* Full Background Video */}
       <div className="fixed inset-0 -z-10">
-        <BackgroundVideo darkMode />
+        <BackgroundVideo />
       </div>
-
       {/* Top Navigation */}
       <div className="fixed top-0 left-0 w-full z-20">
         <Navigation />
       </div>
-
       {/* Main Content (Sign In Card) */}
       <main className="flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full">
@@ -184,8 +183,7 @@ export default function SignInPage() {
           </Card>
         </div>
       </main>
-
-      {/* Bottom Footer */}
+      Bottom Footer
       <div className="relative z-20">
         <Footer />
       </div>

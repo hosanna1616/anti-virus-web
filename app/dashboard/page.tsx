@@ -1,10 +1,19 @@
-import { Navigation } from "@/components/navigation"
-import { EthiopianPattern } from "@/components/ethiopian-pattern"
-import { EthiopianFlag, EthiopianBorder } from "@/components/ethiopian-cultural-elements"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
+import { Navigation } from "@/components/navigation";
+import { EthiopianPattern } from "@/components/ethiopian-pattern";
+import {
+  EthiopianFlag,
+  EthiopianBorder,
+} from "@/components/ethiopian-cultural-elements";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
 import {
   Shield,
   ShieldCheck,
@@ -17,12 +26,12 @@ import {
   TrendingUp,
   Users,
   Database,
-} from "lucide-react"
+} from "lucide-react";
 
 export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-background">
-      <Navigation />
+    <div className="min-h-screen bg-transparent">
+      {/* <Navigation /> */}
 
       {/* Background Video Section */}
       <div className="relative h-48 sm:h-64 md:h-80 overflow-hidden">
@@ -30,12 +39,15 @@ export default function DashboardPage() {
         <EthiopianPattern className="absolute inset-0 z-20 text-white/10" />
 
         {/* Video Background */}
-        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source
-            src="/placeholder.mp4?height=400&width=800&query=cybersecurity digital protection abstract background"
-            type="video/mp4"
-          />
-        </video>
+        {/* <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/security-dark.webm" type="video/webm" />
+        </video> */}
 
         {/* Dashboard Header Content */}
         <div className="relative z-30 container px-4 sm:px-6 lg:px-8 h-full flex items-center">
@@ -45,8 +57,10 @@ export default function DashboardPage() {
                 <Shield className="h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12" />
                 <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 h-3 w-3 sm:h-4 sm:w-4 rounded-full bg-green-400 animate-pulse" />
               </div>
-              <div >
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-serif ">Security Dashboard</h1>
+              <div>
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold font-serif ">
+                  Security Dashboard
+                </h1>
                 {/* <p className="text-white/90 text-sm sm:text-base lg:text-lg">Real-time protection status</p> */}
               </div>
             </div>
@@ -124,7 +138,7 @@ export default function DashboardPage() {
         </div> */}
 
         {/* Main Dashboard Grid */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8 mt-33">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 sm:gap-8 mt-33 bg-transparent">
           {/* Left Column */}
           <div className="xl:col-span-2 space-y-4 sm:space-y-6">
             {/* Real-time Protection Status */}
@@ -134,12 +148,17 @@ export default function DashboardPage() {
                   <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                   <span>Real-time Protection</span>
                 </CardTitle>
-                <CardDescription className="text-sm">Your system is actively protected against threats</CardDescription>
+                <CardDescription className="text-sm">
+                  Your system is actively protected against threats
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">Virus Protection</span>
-                  <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
+                  <Badge
+                    variant="secondary"
+                    className="bg-green-100 text-green-800 text-xs"
+                  >
                     Active
                   </Badge>
                 </div>
@@ -147,7 +166,10 @@ export default function DashboardPage() {
 
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">Firewall</span>
-                  <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
+                  <Badge
+                    variant="secondary"
+                    className="bg-green-100 text-green-800 text-xs"
+                  >
                     Active
                   </Badge>
                 </div>
@@ -155,7 +177,10 @@ export default function DashboardPage() {
 
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">Web Protection</span>
-                  <Badge variant="secondary" className="bg-green-100 text-green-800 text-xs">
+                  <Badge
+                    variant="secondary"
+                    className="bg-green-100 text-green-800 text-xs"
+                  >
                     Active
                   </Badge>
                 </div>
@@ -163,7 +188,10 @@ export default function DashboardPage() {
 
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium">Email Protection</span>
-                  <Badge variant="secondary" className="bg-yellow-100 text-yellow-800 text-xs">
+                  <Badge
+                    variant="secondary"
+                    className="bg-yellow-100 text-yellow-800 text-xs"
+                  >
                     Updating
                   </Badge>
                 </div>
@@ -184,17 +212,27 @@ export default function DashboardPage() {
                   <div className="flex items-start space-x-3 p-3 rounded-lg bg-green-50 border border-green-200">
                     <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5 text-green-600 mt-0.5 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-green-800">Threat Blocked</p>
-                      <p className="text-xs text-green-600">Malware detected and quarantined from download</p>
-                      <p className="text-xs text-green-500 mt-1">2 minutes ago</p>
+                      <p className="text-sm font-medium text-green-800">
+                        Threat Blocked
+                      </p>
+                      <p className="text-xs text-green-600">
+                        Malware detected and quarantined from download
+                      </p>
+                      <p className="text-xs text-green-500 mt-1">
+                        2 minutes ago
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3 p-3 rounded-lg bg-blue-50 border border-blue-200">
                     <Scan className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-blue-800">System Scan Completed</p>
-                      <p className="text-xs text-blue-600">Full system scan finished - No threats found</p>
+                      <p className="text-sm font-medium text-blue-800">
+                        System Scan Completed
+                      </p>
+                      <p className="text-xs text-blue-600">
+                        Full system scan finished - No threats found
+                      </p>
                       <p className="text-xs text-blue-500 mt-1">2 hours ago</p>
                     </div>
                   </div>
@@ -202,9 +240,15 @@ export default function DashboardPage() {
                   <div className="flex items-start space-x-3 p-3 rounded-lg bg-yellow-50 border border-yellow-200">
                     <Download className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-600 mt-0.5 flex-shrink-0" />
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-yellow-800">Definition Update</p>
-                      <p className="text-xs text-yellow-600">Virus definitions updated successfully</p>
-                      <p className="text-xs text-yellow-500 mt-1">4 hours ago</p>
+                      <p className="text-sm font-medium text-yellow-800">
+                        Definition Update
+                      </p>
+                      <p className="text-xs text-yellow-600">
+                        Virus definitions updated successfully
+                      </p>
+                      <p className="text-xs text-yellow-500 mt-1">
+                        4 hours ago
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -217,23 +261,36 @@ export default function DashboardPage() {
             {/* Quick Actions */}
             <Card>
               <CardHeader className="p-4 sm:p-6">
-                <CardTitle className="text-base sm:text-lg">Quick Actions</CardTitle>
-                <CardDescription className="text-sm">Manage your security settings</CardDescription>
+                <CardTitle className="text-base sm:text-lg">
+                  Quick Actions
+                </CardTitle>
+                <CardDescription className="text-sm">
+                  Manage your security settings
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-2 sm:space-y-3 p-4 sm:p-6 pt-0">
                 <Button className="w-full justify-start bg-primary hover:bg-primary/90 text-sm h-10 sm:h-11">
                   <Scan className="h-4 w-4 mr-2" />
                   Run Full Scan
                 </Button>
-                <Button variant="outline" className="w-full justify-start bg-transparent text-sm h-10 sm:h-11">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start bg-transparent text-sm h-10 sm:h-11"
+                >
                   <Download className="h-4 w-4 mr-2" />
                   Update Definitions
                 </Button>
-                <Button variant="outline" className="w-full justify-start bg-transparent text-sm h-10 sm:h-11">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start bg-transparent text-sm h-10 sm:h-11"
+                >
                   <Globe className="h-4 w-4 mr-2" />
                   Web Protection
                 </Button>
-                <Button variant="outline" className="w-full justify-start bg-transparent text-sm h-10 sm:h-11">
+                <Button
+                  variant="outline"
+                  className="w-full justify-start bg-transparent text-sm h-10 sm:h-11"
+                >
                   <Database className="h-4 w-4 mr-2" />
                   Quarantine Manager
                 </Button>
@@ -281,9 +338,13 @@ export default function DashboardPage() {
                 <CardHeader className="pb-3 p-4 sm:p-6">
                   <div className="flex items-center space-x-2 sm:space-x-3">
                     <EthiopianFlag className="h-5 w-6 sm:h-6 sm:w-8" />
-                    <CardTitle className="text-primary text-base sm:text-lg">EthioShield Heritage</CardTitle>
+                    <CardTitle className="text-primary text-base sm:text-lg">
+                      EthioShield Heritage
+                    </CardTitle>
                   </div>
-                  <CardDescription className="text-sm">Proudly protecting Ethiopian digital heritage</CardDescription>
+                  <CardDescription className="text-sm">
+                    Proudly protecting Ethiopian digital heritage
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-3 sm:space-y-4 p-4 sm:p-6 pt-0">
                   <div className="text-sm text-muted-foreground space-y-2">
@@ -302,8 +363,12 @@ export default function DashboardPage() {
                   </div>
 
                   <div className="pt-3 border-t border-border/50">
-                    <p className="text-xs text-center text-muted-foreground">ኢትዮጵያን ዲጂታል ወደፊት ማስጠበቅ</p>
-                    <p className="text-xs text-center text-muted-foreground mt-1">Securing Ethiopia's Digital Future</p>
+                    <p className="text-xs text-center text-muted-foreground">
+                      ኢትዮጵያን ዲጂታል ወደፊት ማስጠበቅ
+                    </p>
+                    <p className="text-xs text-center text-muted-foreground mt-1">
+                      Securing Ethiopia's Digital Future
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -312,5 +377,5 @@ export default function DashboardPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
