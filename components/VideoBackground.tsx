@@ -15,7 +15,7 @@ export default function VideoBackground() {
         className="w-full h-full object-cover"
       >
         <source
-          src={theme === "dark" ? "/security-dark.webm" : "/security-light.webm"}
+          src={theme === "dark" ? "/security-dark.webm" : "/security-dark.webm"}
           type="video/webm"
         />
       </video>

@@ -4,8 +4,9 @@ import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Shield } from "lucide-react"
+import { Menu, MoonIcon, Shield, SunIcon } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
+import { useTheme } from "next-themes"
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -15,9 +16,10 @@ const navItems = [
   { name: "Support", href: "/support" },
 ]
 
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-
+  const { theme, setTheme } = useTheme();
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 animate-slide-down">
       <div className="container flex h-14 sm:h-16 items-center justify-between px-3 sm:px-4 lg:px-6">
@@ -36,7 +38,9 @@ export function Navigation() {
             <Link
               key={item.name}
               href={item.href}
-              className={`text-sm font-medium text-muted-foreground hover:text-primary transition-all duration-200 hover-lift animate-fade-in-left animation-delay-${(index + 1) * 100}`}
+              className={`text-sm font-medium text-muted-foreground hover:text-primary transition-all duration-200 hover-lift animate-fade-in-left animation-delay-${
+                (index + 1) * 100
+              }`}
             >
               {item.name}
             </Link>
@@ -45,8 +49,25 @@ export function Navigation() {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
-          <ThemeToggle />
-          <Button variant="ghost" size="sm" className="hover-scale text-xs sm:text-sm px-2 sm:px-3" asChild>
+          {/* <ThemeToggle /> */}
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? (
+              <SunIcon className="h-5 w-5 text-yellow-300" />
+            ) : (
+              <MoonIcon className="h-5 w-5 text-gray-200" />
+            )}
+          </button>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="hover-scale text-xs sm:text-sm px-2 sm:px-3"
+            asChild
+          >
             <Link href="/signin">Sign In</Link>
           </Button>
           {/* <Button
@@ -65,7 +86,10 @@ export function Navigation() {
               <span className="sr-only">Open menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-72 sm:w-80 animate-slide-down">
+          <SheetContent
+            side="right"
+            className="w-72 sm:w-80 animate-slide-down"
+          >
             <div className="flex flex-col space-y-6 mt-8">
               <div className="space-y-2 stagger-children">
                 {navItems.map((item) => (
@@ -85,7 +109,11 @@ export function Navigation() {
                   <span className="text-sm font-medium">Theme</span>
                   <ThemeToggle />
                 </div>
-                <Button variant="ghost" className="w-full justify-start text-base p-3 h-auto" asChild>
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start text-base p-3 h-auto"
+                  asChild
+                >
                   <Link href="/signin" onClick={() => setIsOpen(false)}>
                     Sign In to Account
                   </Link>
@@ -99,5 +127,5 @@ export function Navigation() {
         </Sheet>
       </div>
     </header>
-  )
+  );
 }
